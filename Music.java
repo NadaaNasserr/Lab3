@@ -22,26 +22,24 @@ public class Music extends Media{
         this.artist = artist;
     }
 
-//    public void listen(User user){
-//
-//
-//
-//  }
-//  public ArrayList<Music> generatePlaylist(ArrayList<Music> music) {
-//      ArrayList<Movie> musicArray = new ArrayList<>();
-//
-//      for (int i = 0;i <music.size() ; i++) {
-//
-//          if(music.get(i).equals(getArtist())){
-//
-//              musicArray.add(Music);
-//          }
-//
-//
-//      }
+    public void listen(User user){
 
-//      return music;
-//  }
+
+
+  }
+  public ArrayList<Music> generatePlaylist(ArrayList<Music> music) {
+      ArrayList<Music> musicArray = new ArrayList<>();
+
+      for (int i = 0; i < music.size(); i++) {
+
+          if (music.get(i).equals(artist)) {
+
+              musicArray.add(music.get(i));
+          }
+      }
+      return musicArray;
+  }
+
   public String getMediaType(){
 
     if(getPrice() >= 10)

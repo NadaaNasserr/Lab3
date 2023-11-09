@@ -53,19 +53,37 @@ public class User {
     }
 
 
-
-    public void addToCart(Media media){
+    public void addToCart(Media media) {
 
         shoppingCart.add(media);
     }
-    public void removeFromCart(Media media){
+
+    public void removeFromCart(Media media) {
         shoppingCart.remove(media);
 
     }
-//    public void checkout(){
-//
-//setPurchaseMediaList(getPurchaseMediaList().size()-addToCart(Media));
-//
-//    }
 
+    public void checkout() {
+
+        for (int i = 0; i < shoppingCart.size(); i++) {
+
+            getPurchaseMediaList().add(shoppingCart.get(i));
+
+            shoppingCart.remove(getPurchaseMediaList().get(i));
+
+
+        }
+
+    }
+
+    @Override
+    public String toString() {
+        return "User{" +
+                "usernamer='" + usernamer + '\'' +
+                ", email='" + email + '\'' +
+                ", purchaseMediaList=" + purchaseMediaList +
+                ", shoppingCart=" + shoppingCart +
+                '}' + super.toString();
+    }
 }
+

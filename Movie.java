@@ -15,28 +15,30 @@ public class Movie extends Media {
     }
 
     public int getDuration() {
+
         return duration;
     }
 
     public void setDuration(int duration) {
+
         this.duration = duration;
     }
 
-//    public void watch(User user) {
-//
-//        user.getPurchaseMediaList().add();
-//
-//    }
+    public void watch(User user) {
 
-    public ArrayList<Movie> recommendSimilarMovies(ArrayList<Movie> movies) {
+        user.getPurchaseMediaList().add(this);
+
+    }
+
+    public ArrayList<Movie> recommendSimilarMovies(ArrayList<Movie> movieCatalog) {
 
         ArrayList<Movie> array1 = new ArrayList<>();
 
-        for (int i = 0; i < movies.size(); i++) {
+        for (int i = 0; i < movieCatalog.size(); i++) {
 
-            if (movies.get(i).equals(super.getAuteur())) {
+            if (movieCatalog.get(i).equals(getAuteur())) {
 
-              //  array1.add(movies);
+             array1.add(movieCatalog.get(i));
             }
             }
         return array1;
