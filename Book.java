@@ -38,7 +38,7 @@ public class Book extends Media{
     }
 
     public double getAverageRating() {
-   int rating=0;
+          int rating=0;
         for (int i = 0; i < reviews.size() ; i++) {
             rating=rating+reviews.get(i).getRating();
 
@@ -47,50 +47,37 @@ public class Book extends Media{
         return sum;
     }
 
-//    public void purchase(User user) {
-//
-//
-//user.getPurchaseMediaList().add(Media);
-//
-//setStock(getStock()-1);
-//
-//    }
+    public void purchase(User user) {
+
+user.getPurchaseMediaList().add(this);
+if(stock >0)
+stock--;
+
+    }
 public boolean isBestseller(){
 
         if(getAverageRating() >= 4.5) {
             return true;
         }
         else return false;
-
-
 }
 
 
     public void restock(int quantity) {
 
-        if (getStock() == 0) {
-            quantity += getStock();
+        if (stock == 0) {
+           stock =stock+quantity;
             System.out.println("restocking");
-
         }
     }
 
     public String getMediaType(){
 
-            for (int i = 0; i <reviews.size(); i++) {
-
                 if(getAverageRating() >=4.5){
-                    return getTitle();
+                    return "Bestselling Book";
                 }
-            }
-           return null;
+                else return "Book";
         }
-
-
-
-
-
-
     @Override
     public String toString() {
         return "Book{" +

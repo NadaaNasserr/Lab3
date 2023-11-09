@@ -48,8 +48,6 @@ public class Media {
     }
 
     public void setPrice(double price) {
-
-
         this.price = price;
     }
 
